@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Personal page built with Bootstrap">
+    <meta name="author" content="Jacob Pomeranz">
+    <link rel="icon" href="/assets/favicon.png"> <!-- Original: http://getbootstrap.com/favicon.ico New design from google.com/design -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
+    <title>JRP</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"> <!--https://bootswatch.com/cyborg/bootstrap.min.css -->
+
+    <!-- Custom styles for this template -->
+    <link href="css/main.css" rel="stylesheet">  
+
+
+    <script type="text/javascript">
+    if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+    var msViewportStyle = document.createElement("style");
+    msViewportStyle.appendChild(document.createTextNode("@-ms-viewport{width:auto!important}"));
+    document.getElementsByTagName("head")[0].appendChild(msViewportStyle);
+    }
+    </script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  <style type="text/css"></style>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  
+  <script>
+  $(document).ready(function(){    
+    $(".nav a").on("click", function(){
+      $(".nav").find(".active").removeClass("active");
+      $(this).parent().addClass("active");
+    });
+  });
+  function toggleInvis(divId) {
+    $("#" + divId).removeClass('hidden').siblings().addClass('hidden');
+  }
+
+  $(document).ready(function(){
+    $('#submit').click(function(){  
+      $.post("contact.php", $("#contactform").serialize(),  function(response) {
+        //$('#success').removeClass('hidden');
+        $('#response').html(response);
+        //$('#success').hide('slow');
+        $("#contactform").trigger('reset'); // reset form
+      });
+    return false;
+    });
+  });
+
+  $(document).ready(function(){
+    $('#projectsButton').click(function(){
+      $(".nav").find(".active").removeClass("active");
+        $("#projectsLink").addClass("active");
+    });
+  });
+  </script>
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-retro navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        <a class="navbar-brand" href="../">Jacob Pomeranz</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#" onclick="toggleInvis('about');"><span class="glyphicon glyphicon-user"></span>About</a></li>
+            <li><a href="/assets/resume.pdf" target="_blank"><span class="glyphicon glyphicon-folder-open"></span>Resume</i></a></li>
+            <li id="projectsLink"><a href="#" onclick="toggleInvis('projects');"><span class="glyphicon glyphicon-briefcase"></span></i>Projects</a></li>
+            <li><a href="#" onclick="toggleInvis('contact');"><span class="glyphicon glyphicon-earphone"></span></i>Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+      <div id="about">
+        <h1 class="row">About Me</h1>
+        <div class="row">
+          <div class="col-sm-6">
+<pre class="pwrap center">
+              `-:::///////::-.       .:://///////::-`             
+               `-/ohmNNNNho-`         `-ohNNNNmho/.`              
+                  ./yNMMMy/`           `+hMMMms/.                 
+                   `/smMMNy/`         `/hNMMms:`                  
+                    `:smMMNh/`       .+hMMMmo:                    
+                      :omMMMh+`     .+dMMMmo-                     
+                       :omMMMd+.   .odMMMdo-                      
+                        -omMMMmo. -omMMMdo-                       
+                         -odMMMmo:smMMMdo-                        
+                          -odMMMNhNMMMdo.                         
+ ..                        .odMMMMMMMd+.                        ..
+  -:-`                      .+dMMMMMh+.                      `-:- 
+    .:/:.                    .+hMMMh+.                    .:/:`   
+       .://-.`                .+hNh+`                `.-//-`      
+          `.://:.`             `+s/`             `-://:.`         
+              `.:///:.`         `:`        ``.:///:.`             
+                  `.-:///:-.``       ``.-:///:-``                 
+                       ``.-:/+//:-://+/:-.``                      
+         ``      ``--..--:://++//://++//::-...:-``      `         
+        .++//////++oo///:--.```     ```.--:///oo++//////++`       
+        `-:+:-...-/o+`                       .oo/-..--:+:-`       
+           `:///++o+-                         -+o++///:`          
+             `.---.`                           `..--.`            </pre>
+          </div>
+          <div class="col-md-6">
+            <h3>Jacob Pomeranz</h3>
+            <p>
+            I am currently studying computer science at the University of Virginia. I enjoy problem-solving and am always looking for a challenge. In my free time I enjoy hiking, reading, lifting, motorcycling, and wasting time on the interwebz.
+            This site was built in order to try out technologies such as Bootstrap, JQuery, PHP, HTML5, and CSS3.
+            </p>
+            <a href="#" class="btn btn-dark" id="projectsButton" onclick="toggleInvis('projects');">View my work</a>
+          </div>
+        </div>
+      </div>
+     
+      <div id="projects" class="hidden">
+        <h1 class="row">My Projects</h1>
+          
+          <div class="row" style="margin-bottom: 1.4em">
+            <div class=".col-xs-6 .col-md-4">
+              <h3><a href="/assets/research_final_paper_revised.pdf" target="_blank">Jefferson Lab Mentorship Research</a></h3>
+              <p>My work at Thomas Jefferson National Accelerator Facility focused on developing charged particle tracking code using C++ and CUDA with Nvidia GPUs to examine their feasibility for replacing the existing multi-core CPU code for use in the GlueX experiment.</p>
+            </div>
+          </div>
+
+        <div class="row" style="margin-bottom: 1.4em">
+          <div class=".col-xs-6 .col-md-4">
+            <h3><a href="http://www.gimgur.com" target="_blank">Gimgur</a></h3>
+            <p>Gimgur is a application developed with the help of a few friends as an entry into the 2015 <a href="http://hackuva.io/" target="_blank">Hack.UVA Hackathon</a>. The application draws inspiration from <a href="http://www.gyazo.com/" target="_blank">Gyazo</a> and allows for instantaneous, one-click uploading of photos to the popular image sharing website <a href="http://www.imgur.com/" target="_blank">Imgur</a>. 
+                    The application was coded in C++ and uses the original Imgur API key system, since implementing OAuth2 support was outside of the scope of the project. The application was a Hack.UVA 2015 Finalist and winner of the Best Web App award. More information is available <a href="http://devpost.com/software/gimgur" target="_blank">here</a>.
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class=".col-xs-6 .col-md-4">
+            <h3><a href="https://github.com/jPomeranz/" target="_blank">Github</a></h3>
+            <p>More coming soon! Check out my latest projects on Github.</p>
+          </div>
+        </div>
+      </div>
+
+      <div id="contact" class="hidden">
+        <h1 class="row">Contact Me</h1>
+        <form id="contactform" class="form-horizontal" role="form" method="post" action="contact.php" class="row">
+          <div class="form-group">
+            <label for="name" class="col-sm-2 control-label">Name</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="name" name="name" placeholder="Name" value="">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email" class="col-sm-2 control-label">Email</label>
+            <div class="col-sm-10">
+              <input type="email" class="form-control" id="email" name="email" placeholder="name@domain.com" value="">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="subject" class="col-sm-2 control-label">Subject</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" value="">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="message" class="col-sm-2 control-label">Message</label>
+            <div class="col-sm-10">
+              <textarea class="form-control" rows="4" name="message" placeholder="Message"></textarea>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-10 col-sm-offset-2">
+              <input id="submit" name="submit" type="submit" value="Send" class="btn btn-dark">
+            </div>
+          </div>
+          <div class="form-group">
+            <div id="response" class="col-sm-10 col-sm-offset-2">
+              <!-- Will be used to display an alert to the user -->
+            </div>
+          </div> 
+        </form>
+
+     <div class="col-sm-10 col-sm-offset-2">
+          <p>For a faster response, contact me at <span class="glyphicon glyphicon-earphone"></span>&nbsp;<a href="tel://1-757-848-6288">+1 (757) 848-6288</a>.</p>
+          <!-- Cross-platform compatible (Android + iPhone) -->
+        </div>
+      </div>
+
+    </div><!-- /.container -->
+    
+    <footer> <!-- Date and closing scripts -->
+     <p>
+       <script language="javascript">
+         var currentDate = new Date();
+         document.write("&#169 Copyright " + currentDate.getFullYear() + ".");
+       </script>
+     </p>
+    </footer>
+  </body>
+</html>
