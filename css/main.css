@@ -135,3 +135,7 @@ pre {
   color: #000000; 
   background-color: #00FF00; 
 }
+i {
+  display: inline-block;
+  margin-right: .5em;
+}
