@@ -7,8 +7,12 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Main />
-      <Footer />
+      <div style={{ position: "relative", minHeight: "100vh" }}>
+        <div style={{ paddingBottom: "2.5rem" }}>
+          <Main />
+        </div>
+        <Footer />
+      </div>
     </div>
   );
 }

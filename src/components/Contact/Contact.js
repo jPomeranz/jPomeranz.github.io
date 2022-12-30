@@ -1,6 +1,5 @@
 import React from "react";
 import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
@@ -9,11 +8,11 @@ import "./Contact.css";
 
 function Contact() {
   return (
-    <Container style={{ marginTop: "2em" }}>
+    <Container style={{ marginTop: "2em", marginLeft: "0.5em" }}>
       <h1>Contact Me</h1>
       <Col>
-        <Row>
-          <FontAwesomeIcon icon={faGithub} />
+        <div>
+          <FontAwesomeIcon icon={faGithub} size="1x" />
           <a
             href="https://github.com/jPomeranz/"
             rel="noopener noreferrer"
@@ -22,15 +21,15 @@ function Contact() {
           >
             jPomeranz
           </a>
-        </Row>
-        <Row>
+        </div>
+        <div>
           <FontAwesomeIcon icon={faEnvelope} />
           <a href="mailto:jrp5kb@virginia.edu" className="conLink">
             jrp5kb@virginia.edu
           </a>
-        </Row>
-        <Row>
-          <FontAwesomeIcon icon={faSteam} />
+        </div>
+        <div>
+          <FontAwesomeIcon icon={faSteam} size="sm" />
           <a
             href="https://steamcommunity.com/id/00n/"
             rel="noopener noreferrer"
@@ -39,7 +38,7 @@ function Contact() {
           >
             /id/00n
           </a>
-        </Row>
+        </div>
       </Col>
     </Container>
   );

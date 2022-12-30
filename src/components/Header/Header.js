@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faUser,
   faFolderOpen,
+  faBook,
   faPhone,
 } from "@fortawesome/free-solid-svg-icons";
 import "./Header.css";
@@ -13,7 +14,7 @@ import "./Header.css";
 function Header() {
   return (
     <Navbar bg="light" variant="light">
-      <Navbar.Brand>Jacob Pomeranz</Navbar.Brand>
+      <Navbar.Brand className="link">Jacob Pomeranz</Navbar.Brand>
       <Nav className="mr-auto">
         <Nav.Link as={Link} to="/">
           <FontAwesomeIcon icon={faUser} />
@@ -27,6 +28,10 @@ function Header() {
         >
           <FontAwesomeIcon icon={faFolderOpen} />
           <span className="link">Resume</span>
+        </Nav.Link>
+        <Nav.Link as={Link} to="/books">
+          <FontAwesomeIcon icon={faBook} />
+          <span className="link">Books</span>
         </Nav.Link>
         <Nav.Link as={Link} to="/contact">
           <FontAwesomeIcon icon={faPhone} />
