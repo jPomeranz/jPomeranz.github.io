@@ -1,6 +1,8 @@
+A Canticle for Leibowitz
 A Random Walk Down Wallstreet
 Across Realtime
 Animal Farm
+Anything You Want by Derek Sivers
 Axiomatic by Greg Egan
 Beneath the Wheel
 Biogenesis by Tatsuaki Ishiguro
@@ -20,9 +22,12 @@ Ender's Game
 Exhalation by Ted Chiang
 Flatland
 Flowers for Algernon
+Friday by Robert A. Heinlein
 Gates of Fire
+Genghis Khan and the Making of the Modern World
 Humankind: A Hopeful History
 If It Bleeds
+Influence: Science and Practice
 Into the Wild
 Invisible Planets
 Ishmael
@@ -30,7 +35,7 @@ Island by Aldous Huxley
 Klara and the Sun
 Kon-Tiki by Thor Heyerdahl
 Let the Right One In
-Lexicon by Max Berry
+Lexicon by Max Barry
 Market Wizards
 Men Without Women
 Metro 2033
@@ -40,8 +45,10 @@ One-Dimensional Man
 Perfume: The Story of a Murderer
 Plants for a Future
 Plants of the Gods
+Propaganda: The Formation of Men's Attitudes
 Rainbow's End
 Roadside Picnic
+Sandkings
 Sapiens
 Shantaram
 South of the Border, West of the Sun
@@ -75,10 +82,12 @@ The Winter of Our Discontent
 The Zahir
 Travels With Charley
 Ubik
+Unrestricted Warfare
 Vita Nostra
 Walden
 What I Talk About When I Talk About Running
 Where the Crawdads Sing
+Wild Seed
 With Winning In Mind
 Zen and the Art of Motorcycle Maintenance
 Zero to One
