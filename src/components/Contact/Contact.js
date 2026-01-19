@@ -1,6 +1,4 @@
 import React from "react";
-import Container from "react-bootstrap/Container";
-import Col from "react-bootstrap/Col";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faSteam } from "@fortawesome/free-brands-svg-icons";
@@ -8,9 +6,12 @@ import "./Contact.css";
 
 function Contact() {
   return (
-    <Container style={{ marginTop: "2em", marginLeft: "0.5em" }}>
+    <div
+      className="container"
+      style={{ marginTop: "2em", marginLeft: "0.5em" }}
+    >
       <h1>Contact Me</h1>
-      <Col>
+      <div>
         <div>
           <FontAwesomeIcon icon={faGithub} size="1x" />
           <a
@@ -39,8 +40,8 @@ function Contact() {
             /id/00n
           </a>
         </div>
-      </Col>
-    </Container>
+      </div>
+    </div>
   );
 }
 

@@ -1,3 +1,91 @@
 .link {
     margin-left: 0.5em;
 }
+
+/* Navbar styles */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f8f9fa;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.navbar-brand {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.navbar-toggler {
+  display: none;
+  background: none;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.25rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 1.25rem;
+  color: rgba(0, 0, 0, 0.55);
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+
+.navbar-toggler:hover {
+  color: rgba(0, 0, 0, 0.7);
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.navbar-nav {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.nav-link {
+  color: rgba(0, 0, 0, 0.55);
+  text-decoration: none;
+  padding: 0.5rem;
+  transition: color 0.15s ease-in-out;
+  white-space: nowrap;
+}
+
+.nav-link:hover {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.nav-link.active {
+  color: rgba(0, 0, 0, 0.9);
+  font-weight: 500;
+}
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+  }
+
+  .navbar-toggler {
+    display: block;
+  }
+
+  .navbar-nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    gap: 0;
+  }
+
+  .navbar-nav.show {
+    display: flex;
+  }
+
+  .nav-link {
+    width: 100%;
+    padding: 0.75rem 0.5rem;
+  }
+}

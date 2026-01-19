@@ -1,44 +1,72 @@
-import React from "react";
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faUser,
   faFolderOpen,
   faBook,
   faPhone,
+  faBars,
 } from "@fortawesome/free-solid-svg-icons";
 import "./Header.css";
 
 function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const isActive = (path) => location.pathname === path;
+
   return (
-    <Navbar bg="light" variant="light">
-      <Navbar.Brand className="link">Jacob Pomeranz</Navbar.Brand>
-      <Nav className="mr-auto">
-        <Nav.Link as={Link} to="/">
+    <nav className="navbar">
+      <div className="navbar-brand">Jacob Pomeranz</div>
+      <button
+        className="navbar-toggler"
+        onClick={toggleMenu}
+        aria-label="Toggle navigation"
+      >
+        <FontAwesomeIcon icon={faBars} />
+      </button>
+      <div className={`navbar-nav ${isMenuOpen ? "show" : ""}`}>
+        <Link
+          to="/"
+          className={`nav-link ${isActive("/") ? "active" : ""}`}
+          onClick={() => setIsMenuOpen(false)}
+        >
           <FontAwesomeIcon icon={faUser} />
           <span className="link">About</span>
-        </Nav.Link>
-        <Nav.Link
-          active={false}
+        </Link>
+        <a
           href="/resume.pdf"
           rel="noopener noreferrer"
           target="_blank"
+          className="nav-link"
+          onClick={() => setIsMenuOpen(false)}
         >
           <FontAwesomeIcon icon={faFolderOpen} />
           <span className="link">Resume</span>
-        </Nav.Link>
-        <Nav.Link as={Link} to="/books">
+        </a>
+        <Link
+          to="/books"
+          className={`nav-link ${isActive("/books") ? "active" : ""}`}
+          onClick={() => setIsMenuOpen(false)}
+        >
           <FontAwesomeIcon icon={faBook} />
           <span className="link">Books</span>
-        </Nav.Link>
-        <Nav.Link as={Link} to="/contact">
+        </Link>
+        <Link
+          to="/contact"
+          className={`nav-link ${isActive("/contact") ? "active" : ""}`}
+          onClick={() => setIsMenuOpen(false)}
+        >
           <FontAwesomeIcon icon={faPhone} />
           <span className="link">Contact</span>
-        </Nav.Link>
-      </Nav>
-    </Navbar>
+        </Link>
+      </div>
+    </nav>
   );
 }
 
