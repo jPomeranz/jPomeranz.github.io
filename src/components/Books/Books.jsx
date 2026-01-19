@@ -1,7 +1,7 @@
-import React from "react";
+import { Component } from "react";
 import rawBooks from "./books.txt";
 
-class Books extends React.Component {
+class Books extends Component {
   constructor(props) {
     super(props);
     this.state = { books: [] };
