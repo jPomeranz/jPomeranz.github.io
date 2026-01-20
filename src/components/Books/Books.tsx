@@ -1,15 +1,21 @@
 import { Component } from "react";
-import rawBooks from "./books.txt";
 
-class Books extends Component {
-  constructor(props) {
+interface BooksState {
+  books: string[];
+}
+
+class Books extends Component<Record<string, never>, BooksState> {
+  constructor(props: Record<string, never>) {
     super(props);
     this.state = { books: [] };
   }
 
   async componentDidMount() {
-    const bookText = await (await fetch(rawBooks)).text();
-    this.setState({ books: bookText.split("\n") });
+    const response = await fetch("/books.txt");
+    const bookText = await response.text();
+    this.setState({
+      books: bookText.split("\n").filter((book) => book.trim()),
+    });
   }
 
   render() {
