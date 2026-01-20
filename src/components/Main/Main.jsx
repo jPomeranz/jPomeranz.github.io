@@ -1,16 +1,21 @@
 import { Routes, Route } from "react-router-dom";
+import { lazy, Suspense } from "react";
 import Home from "../Home/Home";
-import Contact from "../Contact/Contact";
-import Books from "../Books/Books";
+
+// Lazy load routes that aren't immediately needed
+const Contact = lazy(() => import("../Contact/Contact"));
+const Books = lazy(() => import("../Books/Books"));
 
 function Main() {
   return (
     <main>
-      <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/books" element={<Books />} />
-      </Routes>
+      <Suspense fallback={<div style={{ padding: "2em" }}>Loading...</div>}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/books" element={<Books />} />
+        </Routes>
+      </Suspense>
     </main>
   );
 }
