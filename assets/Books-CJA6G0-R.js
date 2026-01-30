@@ -1,2 +1,0 @@
-import{r,j as s}from"./index-jI3t-Jtm.js";class a extends r.Component{constructor(t){super(t),this.state={books:[]}}async componentDidMount(){const e=await(await fetch("/books.txt")).text();this.setState({books:e.split(`
-`).filter(o=>o.trim())})}render(){return s.jsxs("div",{className:"container",style:{marginTop:"2em",marginLeft:"0.5em"},children:[s.jsx("h1",{children:"Books"}),s.jsx("div",{children:s.jsx("ul",{children:this.state.books.map((t,e)=>s.jsx("li",{children:t},e))})})]})}}export{a as default};

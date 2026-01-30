@@ -1,93 +1,114 @@
-A Canticle for Leibowitz
-A Random Walk Down Wallstreet
-Across Realtime
-Animal Farm
+A Canticle for Leibowitz by Walter M. Miller, Jr.
+A Game of Thrones by George R. R. Martin
+A Random Walk Down Wallstreet by Burton Malkiel
+Across Realtime by Vernor Vinge
+Animal Farm by George Orwell
 Anything You Want by Derek Sivers
+At Home in the Woods: Living the Life of Thoreau Today by Bradford Angier
 Axiomatic by Greg Egan
-Beneath the Wheel
+Beneath the Wheel by Hermann Hesse
 Biogenesis by Tatsuaki Ishiguro
-Brave New World
-Broken Stars
+Brave New World by Aldous Huxley
+Broken Stars by Ken Liu
+Butcher's Crossing by John Edward Williams
 Company by Max Barry
-Conditionally Human
-Consider the Lobster and Other Essays
-Cursed Bunny
-Dark Benediction
-Daughter from the Dark
-Desert Solitaire
-Design of Everyday Things
-Do Androids Dream of Electric Sheep
-Eating to Extinction
-Ender's Game
-Exhalation by Ted Chiang
-Flatland
-Flowers for Algernon
+Conditionally Human by Walter M. Miller
+Conquistador: Hernán Cortés, King Montezuma, and the Last Stand of the Aztecs by Buddy Levy
+Consider the Lobster and Other Essays by David Foster Wallace
+Cursed Bunny by Bora Chung
+Dark Benediction by Walter M. Miller Jr.
+Daughter from the Dark by Marina and Sergey Dyachenko
+Day Zero by C. Robert Cargill
+Desert Solitaire by Edward Abbey
+Design of Everyday Things by Donald Norman
+Die With Zero by Bill Perkins
+Do Androids Dream of Electric Sheep by Philip K. Dick
+Drinking Molotov Cocktails with Gandhi by Mark Boyle
+Eating to Extinction by Dan Saladino
+Ender's Game by Orson Scott Card
+Exhalation: Stories by Ted Chiang
+Flatland: A Romance of Many Dimensions by Edwin Abbott Abbott
+Flowers for Algernon by Daniel Keyes
 Friday by Robert A. Heinlein
-Gates of Fire
-Genghis Khan and the Making of the Modern World
-Humankind: A Hopeful History
-If It Bleeds
-Influence: Science and Practice
-Into the Wild
-Invisible Planets
-Ishmael
+Gates of Fire by Steven Pressfield
+Genghis Khan and the Making of the Modern World by Jack Weatherford
+Good Energy by Casey Means
+Humankind: A Hopeful History by Rutger Bregman
+If It Bleeds by Stephen King
+If This Is a Man by Primo Levi
+Industrial Society and Its Future by Ted Kaczynski
+Influence: Science and Practice by Robert B. Cialdini
+Into the Wild by Jon Krakauer
+Invisible Planets by Ken Liu
+Ishmael by Daniel Quinn
 Island by Aldous Huxley
-Klara and the Sun
+King Rat by James Clavell
+Klara and the Sun by Kazuo Ishiguro
 Kon-Tiki by Thor Heyerdahl
-Let the Right One In
+Let the Right One In by John Ajvide Lindqvist
 Lexicon by Max Barry
-Market Wizards
-Men Without Women
-Metro 2033
-Old Man's War
-One Man's Wilderness
-One-Dimensional Man
-Perfume: The Story of a Murderer
-Plants for a Future
-Plants of the Gods
-Propaganda: The Formation of Men's Attitudes
-Rainbow's End
-Roadside Picnic
-Sandkings
-Sapiens
-Shantaram
-South of the Border, West of the Sun
-Spring Chicken
-Steppenwolf
-Stories of Your Life and Others
-Sum by David Eagleman
-Surely You're Joking, Mr. Feynman!
-The 188th Crybaby Brigade
-The Death of Ivan Ilyich
+Lightning Rods by Helen DeWitt
+Luminous by Greg Egan
+Market Wizards by Jack D. Schwager
+Men Are from Mars, Women Are from Venus by John Gray
+Men Without Women by Haruki Murakami
+Metro 2033 by Dmitry Glukhovsky
+Never Enough: From Barista to Billionaire by Andrew Wilkinson
+Old Man's War by John Scalzi
+One Man's Wilderness by Richard Proenneke and Sam Keith
+One River by Wade Davis
+One-Dimensional Man by Herbert Marcuse
+Perfume: The Story of a Murderer by Patrick Süskind
+Propaganda: The Formation of Men's Attitudes by Jacques Ellul
+Radicalized by Cory Doctorow
+Rainbow's End by Vernor Vinge
+Roadside Picnic by Arkady and Boris Strugatsky
+Sandkings by George R. R. Martin
+Sapiens: A Brief History of Humankind by Yuval Noah Harari
+Shadow of the Leviathan by Robert Jackson Bennett
+Shantaram by Gregory David Roberts
+Siddhartha by Hermann Hesse
+South of the Border, West of the Sun by Haruki Murakami
+Steppenwolf by Hermann Hesse
+Stories of Your Life and Others by Ted Chiang
+Sum: Forty Tales from the Afterlives by David Eagleman
+Surely You're Joking, Mr. Feynman! by Richard Feynman and Ralph Leighton
+The Chrysalids by John Wyndham
+The Death of Ivan Ilyich by Leo Tolstoy
 The Egg by Andy Weir
-The Elegance of the Hedgehog
-The Forever War
-The Hidden Girl and Other Stories
-The House of the Scorpion
-The Last Answer
-The Last Question
-The Lottery in Babylon
-The Man Who Solved the Market
-The Moral Animal
-The Mountain in the Sea
-The Omnivore's Dilemma
-The Paper Menagerie
-The Plant Hunter
-The Richest Man in Babylon
-The Stranger
-The Things They Carried
-The Three-Body Problem
-The Unabomber Manifesto: Industrial Society and Its Future
-The Winter of Our Discontent
-The Zahir
-Travels With Charley
-Ubik
-Unrestricted Warfare
-Vita Nostra
-Walden
-What I Talk About When I Talk About Running
-Where the Crawdads Sing
-Wild Seed
-With Winning In Mind
-Zen and the Art of Motorcycle Maintenance
-Zero to One
+The Elegance of the Hedgehog by Muriel Barbery
+The Forever War by Joe Haldeman
+The Hidden Girl and Other Stories by Ken Liu
+The House of God by Samuel Shem
+The House of the Scorpion by Nancy Farmer
+The Invincible by Stanislaw Lem
+The Land of Big Numbers by Te-Ping Chen
+The Last Answer by Isaac Asimov
+The Last Question by Isaac Asimov
+The Lottery in Babylon by Jorge Luis Borges
+The Man Who Solved the Market by Gregory Zuckerman
+The Moral Animal by Robert Wright
+The Mountain in the Sea by Ray Nayler
+The Omnivore's Dilemma by Michael Pollan
+The Paper Menagerie by Ken Liu
+The Plant Hunter by Cassandra Leah Quave
+The Richest Man in Babylon by George Samuel Clason
+The Stranger by Albert Camus
+The Things They Carried by Tim O'Brien
+The Three-Body Problem by Liu Cixin
+The Value of Others by Orion Taraban
+The Winter of Our Discontent by John Steinbeck
+The Zahir by Paulo Coelho
+Travels With Charley by John Steinbeck
+Tuf Voyaging by George R. R. Martin
+Ubik by Philip K. Dick
+Unrestricted Warfare by Qiao Liang and Wang Xiangsui
+Venomous Lumpsucker by Ned Beauman
+Vita Nostra by Marina and Sergey Dyachenko
+Walden by Henry David Thoreau
+What I Talk About When I Talk About Running by Haruki Murakami
+Where the Crawdads Sing by Delia Owens
+Wild Seed by Octavia E. Butler
+With Winning In Mind by Lanny Bassham
+Zen and the Art of Motorcycle Maintenance by Robert M. Pirsig
+Zero to One by Peter Thiel
