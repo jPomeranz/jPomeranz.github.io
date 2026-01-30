@@ -8,6 +8,7 @@ import {
   faPhone,
   faBars,
 } from "@fortawesome/free-solid-svg-icons";
+import ThemeToggle from "../ThemeToggle/ThemeToggle";
 import "./Header.css";
 
 function Header() {
@@ -23,13 +24,6 @@ function Header() {
   return (
     <nav className="navbar">
       <div className="navbar-brand">Jacob Pomeranz</div>
-      <button
-        className="navbar-toggler"
-        onClick={toggleMenu}
-        aria-label="Toggle navigation"
-      >
-        <FontAwesomeIcon icon={faBars} />
-      </button>
       <div className={`navbar-nav ${isMenuOpen ? "show" : ""}`}>
         <Link
           to="/"
@@ -66,6 +60,14 @@ function Header() {
           <span className="link">Contact</span>
         </Link>
       </div>
+      <ThemeToggle />
+      <button
+        className="navbar-toggler"
+        onClick={toggleMenu}
+        aria-label="Toggle navigation"
+      >
+        <FontAwesomeIcon icon={faBars} />
+      </button>
     </nav>
   );
 }

@@ -90,19 +90,17 @@
   }
 }
 
-/* Dark mode support */
-@media (prefers-color-scheme: dark) {
-  .modal-content {
-    background: #1e1e1e;
-    color: #e0e0e0;
-  }
+/* Dark mode */
+[data-theme="dark"] .modal-content {
+  background: #1e1e1e;
+  color: #e0e0e0;
+}
 
-  .modal-close {
-    color: #b0b0b0;
-  }
+[data-theme="dark"] .modal-close {
+  color: #b0b0b0;
+}
 
-  .modal-close:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: #fff;
-  }
+[data-theme="dark"] .modal-close:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
 }

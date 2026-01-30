@@ -6,11 +6,11 @@
 .navbar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   background-color: #f8f9fa;
   padding: 0.5rem 1rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: relative;
+  gap: 1rem;
 }
 
 .navbar-brand {
@@ -40,6 +40,7 @@
   display: flex;
   gap: 1rem;
   align-items: center;
+  margin-left: auto;
 }
 
 .nav-link {
@@ -67,6 +68,7 @@
 
   .navbar-toggler {
     display: block;
+    order: 3;
   }
 
   .navbar-nav {
@@ -78,6 +80,8 @@
     padding-top: 0.5rem;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     gap: 0;
+    order: 4;
+    margin-left: 0;
   }
 
   .navbar-nav.show {
@@ -90,42 +94,38 @@
   }
 }
 
-/* Dark mode support */
-@media (prefers-color-scheme: dark) {
-  .navbar {
-    background-color: #2a2a2a;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  }
-
-  .navbar-brand {
-    color: rgba(255, 255, 255, 0.9);
-  }
-
-  .navbar-toggler {
-    border-color: rgba(255, 255, 255, 0.2);
-    color: rgba(255, 255, 255, 0.7);
-  }
-
-  .navbar-toggler:hover {
-    color: rgba(255, 255, 255, 0.9);
-    border-color: rgba(255, 255, 255, 0.3);
-  }
-
-  .nav-link {
-    color: rgba(255, 255, 255, 0.7);
-  }
-
-  .nav-link:hover {
-    color: rgba(255, 255, 255, 0.9);
-  }
-
-  .nav-link.active {
-    color: #fff;
-  }
+/* Dark mode */
+[data-theme="dark"] .navbar {
+  background-color: #2a2a2a;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-@media (max-width: 768px) and (prefers-color-scheme: dark) {
-  .navbar-nav {
-    border-top-color: rgba(255, 255, 255, 0.1);
-  }
+[data-theme="dark"] .navbar-brand {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+[data-theme="dark"] .navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+[data-theme="dark"] .navbar-toggler:hover {
+  color: rgba(255, 255, 255, 0.9);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+[data-theme="dark"] .nav-link {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+[data-theme="dark"] .nav-link:hover {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+[data-theme="dark"] .nav-link.active {
+  color: #fff;
+}
+
+[data-theme="dark"] .navbar-nav {
+  border-top-color: rgba(255, 255, 255, 0.1);
 }
