@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./Books.css";
+import Modal from "./Modal/Modal";
 
 interface BookData {
   title: string;
@@ -35,13 +36,12 @@ const Books = () => {
     loadBooks();
   }, []);
 
-
-  const fetchBookData = async (title: string, author: string) => {
+  const fetchBookData = async (title: string, author?: string) => {
     const query = `intitle:${encodeURIComponent(title)}${
       author ? `+inauthor:${encodeURIComponent(author)}` : ""
     }`;
     const response = await fetch(
-      `https://www.googleapis.com/books/v1/volumes?q=${query}&maxResults=1`
+      `https://www.googleapis.com/books/v1/volumes?q=${query}&maxResults=1`,
     );
     const data = await response.json();
     return data.items?.[0]?.volumeInfo || null;
@@ -60,7 +60,8 @@ const Books = () => {
         setError("Book information not found");
       }
     } catch (err) {
-      setError("Failed to fetch book information");
+      const errMessage = err instanceof Error ? err.message : String(err);
+      setError(`Failed to fetch book information: ${errMessage}`);
     } finally {
       setLoading(false);
     }
@@ -71,111 +72,79 @@ const Books = () => {
     setError(null);
   };
 
-  useEffect(() => {
-    const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        closeModal();
-      }
-    };
+  const isModalOpen = loading || !!error || !!selectedBook;
 
-    if (selectedBook || error) {
-      document.addEventListener("keydown", handleEscape);
-      document.body.style.overflow = "hidden";
-    }
+  const modalContent = loading ? (
+    <div className="loading">Loading book information...</div>
+  ) : error ? (
+    <div className="error-message">{error}</div>
+  ) : selectedBook ? (
+    <div className="modal-body">
+      {selectedBook.imageLinks?.thumbnail && (
+        <img
+          src={
+            selectedBook.imageLinks.thumbnail.startsWith("http:")
+              ? selectedBook.imageLinks.thumbnail.replace(/^http:/, "https:")
+              : selectedBook.imageLinks.thumbnail
+          }
+          alt={selectedBook.title}
+          className="book-thumbnail"
+        />
+      )}
 
-    return () => {
-      document.removeEventListener("keydown", handleEscape);
-      document.body.style.overflow = "unset";
-    };
-  }, [selectedBook, error]);
+      <div className="book-details">
+        <h2>{selectedBook.title}</h2>
+
+        {selectedBook.authors && (
+          <p className="book-authors">by {selectedBook.authors.join(", ")}</p>
+        )}
+
+        {selectedBook.description && (
+          <p className="book-description">{selectedBook.description}</p>
+        )}
+
+        {selectedBook.infoLink && (
+          <a
+            href={selectedBook.infoLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="view-link"
+          >
+            View on Google Books →
+          </a>
+        )}
+      </div>
+    </div>
+  ) : null;
 
   return (
-    <div
-      className="container"
-      style={{ marginTop: "2em", marginLeft: "0.5em" }}
-    >
-      <h1>Books</h1>
-      <div>
-        <ul className="books-list">
-          {books.map((book, index) => (
+    <div className="books-page">
+      <div
+        className="container"
+        style={{ marginTop: "2em", marginLeft: "0.5em" }}
+      >
+        <h1>Books</h1>
+      </div>
+
+      <ul className="books-list">
+        {books.map((book, index) => {
+          const { title, author } = parseBook(book);
+          return (
             <li
               key={index}
               className="book-item"
               onClick={() => handleBookClick(book)}
             >
-              {book}
+              <span className="book-title">{title}</span>
+              {author && <span className="book-author">by {author}</span>}
             </li>
-          ))}
-        </ul>
-      </div>
+          );
+        })}
+      </ul>
 
-      {loading && (
-        <div className="modal-overlay" onClick={closeModal}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <div className="loading">Loading book information...</div>
-          </div>
-        </div>
-      )}
-
-      {error && (
-        <div className="modal-overlay" onClick={closeModal}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="modal-close" onClick={closeModal}>
-              ×
-            </button>
-            <div className="error-message">{error}</div>
-          </div>
-        </div>
-      )}
-
-      {selectedBook && (
-        <div className="modal-overlay" onClick={closeModal}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="modal-close" onClick={closeModal}>
-              ×
-            </button>
-
-            <div className="modal-body">
-              {selectedBook.imageLinks?.thumbnail && (
-                <img
-                  src={selectedBook.imageLinks.thumbnail.startsWith('http:')
-                    ? selectedBook.imageLinks.thumbnail.replace(/^http:/, 'https:')
-                    : selectedBook.imageLinks.thumbnail}
-                  alt={selectedBook.title}
-                  className="book-thumbnail"
-                />
-              )}
-
-              <div className="book-details">
-                <h2>{selectedBook.title}</h2>
-
-                {selectedBook.authors && (
-                  <p className="book-authors">
-                    by {selectedBook.authors.join(", ")}
-                  </p>
-                )}
-
-                {selectedBook.description && (
-                  <p className="book-description">
-                    {selectedBook.description}
-                  </p>
-                )}
-
-                {selectedBook.infoLink && (
-                  <a
-                    href={selectedBook.infoLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="view-link"
-                  >
-                    View on Google Books →
-                  </a>
-                )}
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
+      <Modal isOpen={isModalOpen} onClose={closeModal}>
+        {modalContent}
+      </Modal>
     </div>
   );
 };
