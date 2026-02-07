@@ -5,12 +5,8 @@ import Modal from "./Modal/Modal";
 interface BookData {
   title: string;
   authors?: string[];
-  description?: string;
-  imageLinks?: {
-    thumbnail?: string;
-    smallThumbnail?: string;
-  };
-  infoLink?: string;
+  thumbnail?: string;
+  infoLink: string;
 }
 
 const parseBook = (bookString: string) => {
@@ -37,22 +33,28 @@ const Books = () => {
   }, []);
 
   const fetchBookData = async (title: string, author?: string) => {
-    const query = `intitle:${encodeURIComponent(title)}${
-      author ? `+inauthor:${encodeURIComponent(author)}` : ""
-    }`;
+    const query = author
+      ? `title=${encodeURIComponent(title)}&author=${encodeURIComponent(author)}`
+      : `title=${encodeURIComponent(title)}`;
     const response = await fetch(
-      `https://www.googleapis.com/books/v1/volumes?q=${query}&maxResults=1`,
+      `https://openlibrary.org/search.json?${query}&fields=key,title,author_name,cover_i&limit=1`,
     );
     if (!response.ok) {
-      if (response.status === 429) {
-        throw new Error(
-          "Rate limited by Google Books API. Please try again later.",
-        );
-      }
       throw new Error(`API error: ${response.status}`);
     }
     const data = await response.json();
-    return data.items?.[0]?.volumeInfo || null;
+    const book = data.docs?.[0];
+
+    if (!book) return null;
+
+    return {
+      title: book.title,
+      authors: book.author_name,
+      thumbnail: book.cover_i
+        ? `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`
+        : undefined,
+      infoLink: `https://openlibrary.org${book.key}`,
+    };
   };
 
   const handleBookClick = async (bookString: string) => {
@@ -88,12 +90,12 @@ const Books = () => {
     <div className="error-message">{error}</div>
   ) : selectedBook ? (
     <div className="modal-body">
-      {selectedBook.imageLinks?.thumbnail && (
+      {selectedBook.thumbnail && (
         <img
           src={
-            selectedBook.imageLinks.thumbnail.startsWith("http:")
-              ? selectedBook.imageLinks.thumbnail.replace(/^http:/, "https:")
-              : selectedBook.imageLinks.thumbnail
+            selectedBook.thumbnail.startsWith("http:")
+              ? selectedBook.thumbnail.replace(/^http:/, "https:")
+              : selectedBook.thumbnail
           }
           alt={selectedBook.title}
           className="book-thumbnail"
@@ -107,10 +109,6 @@ const Books = () => {
           <p className="book-authors">by {selectedBook.authors.join(", ")}</p>
         )}
 
-        {selectedBook.description && (
-          <p className="book-description">{selectedBook.description}</p>
-        )}
-
         {selectedBook.infoLink && (
           <a
             href={selectedBook.infoLink}
@@ -118,7 +116,7 @@ const Books = () => {
             rel="noopener noreferrer"
             className="view-link"
           >
-            View on Google Books →
+            View on Open Library →
           </a>
         )}
       </div>
